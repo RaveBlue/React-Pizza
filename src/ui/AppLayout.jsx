@@ -12,10 +12,11 @@ function AppLayout() {
       {isLoading && <Loader />}
 
       <Header />
-
-      <main>
-        <Outlet />
-      </main>
+      <div className="overflow-scroll">
+        <main className="mx-auto max-w-3xl">
+          <Outlet />
+        </main>
+      </div>
 
       <CartOverview />
     </div>
