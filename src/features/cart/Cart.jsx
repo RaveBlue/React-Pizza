@@ -1,7 +1,8 @@
 //import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
 import Button from '../../ui/Button';
-import LinkButton from '../..ui/LinkButton';
+import LinkButton from '../../ui/LinkButton';
+//import LinkButton from '../..ui/LinkButton';
 //import cart from '../cart';
 //import { useState } from 'react';
 
