@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 // eslint-disable-next-line react/prop-types
 function LinkButton({ children, to }) {
   const navigate = useNavigate();
-  const className = 'text-sm text-blue-500 hover:text-blue-600 hover:underline';
+  const className = 'text-sm text-blue-500 hover:text-blue-300 hover:underline';
 
   if (to === '-1')
     return (
