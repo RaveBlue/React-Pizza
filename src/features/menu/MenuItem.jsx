@@ -1,13 +1,20 @@
 import { formatCurrency } from '../../utils/helpers';
-import PropTypes from 'prop-types';
 import Button from '../../ui/Button';
-import { addItem } from '../cart/cartSlice';
-import { useDispatch } from 'react-redux';
+import { addItem, getCurrentQuantityById } from '../cart/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import DeleteItem from '../cart/DeleteItem';
+import UpdateItemQuantity from '../cart/UpdateItemQuantity';
+//import PropTypes from 'prop-types';
 
+// eslint-disable-next-line react/prop-types
 function MenuItem({ pizza }) {
   const dispatch = useDispatch();
 
+  // eslint-disable-next-line react/prop-types
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+
+  const currentQuantity = useSelector(getCurrentQuantityById(id));
+  const isInCart = currentQuantity > 0;
 
   function handleAddToCart() {
     const newItem = {
@@ -41,7 +48,17 @@ function MenuItem({ pizza }) {
             </p>
           )}
 
-          {!soldOut && (
+          {isInCart && (
+            <div className="item-center flex gap-3 sm:gap-8">
+              <UpdateItemQuantity
+                pizzaId={id}
+                currentQuantity={currentQuantity}
+              />
+              <DeleteItem pizzaId={id} />
+            </div>
+          )}
+
+          {!soldOut && !isInCart && (
             <Button type="small" onClick={handleAddToCart}>
               Add to cart
             </Button>
@@ -52,7 +69,7 @@ function MenuItem({ pizza }) {
   );
 }
 
-MenuItem.propTypes = {
+/*MenuItem.propTypes = {
   pizza: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
@@ -62,5 +79,5 @@ MenuItem.propTypes = {
     imageUrl: PropTypes.string.isRequired,
   }).isRequired,
 };
-
+*/
 export default MenuItem;
