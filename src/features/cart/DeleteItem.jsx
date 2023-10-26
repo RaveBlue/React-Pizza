@@ -1,8 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { deleteItem } from './cartSlice';
-import { Button } from '../../ui/Button';
+import Button from '../../ui/Button';
 
-// eslint-disable-next-line react/prop-types
 function DeleteItem({ pizzaId }) {
   const dispatch = useDispatch();
 
@@ -12,5 +11,6 @@ function DeleteItem({ pizzaId }) {
     </Button>
   );
 }
+
 
 export default DeleteItem;

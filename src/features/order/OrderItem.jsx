@@ -1,9 +1,6 @@
 import { formatCurrency } from '../../utils/helpers';
-//import React from 'react';
-//import PropTypes from 'prop-types';
-// eslint-disable-next-line react/prop-types
+
 function OrderItem({ item, isLoadingIngredients, ingredients }) {
-  // eslint-disable-next-line react/prop-types
   const { quantity, name, totalPrice } = item;
 
   return (
@@ -20,14 +17,6 @@ function OrderItem({ item, isLoadingIngredients, ingredients }) {
     </li>
   );
 }
-/*OrderItem.propTypes = {
-  item: PropTypes.shape({
-    quantity: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    totalPrice: PropTypes.number.isRequired,
-  }).isRequired,
-  isLoadingIngredients: PropTypes.bool.isRequired,
-  ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-*/
+
+
 export default OrderItem;

@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import Button from '../../ui/Button';
 import { decreaseItemQuantity, increaseItemQuantity } from './cartSlice';
 
-// eslint-disable-next-line react/prop-types, no-unused-vars
 function UpdateItemQuantity({ pizzaId, currentQuantity }) {
   const dispatch = useDispatch();
 
@@ -24,4 +23,5 @@ function UpdateItemQuantity({ pizzaId, currentQuantity }) {
     </div>
   );
 }
+
 export default UpdateItemQuantity;

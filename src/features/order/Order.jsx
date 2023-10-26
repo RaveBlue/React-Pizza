@@ -10,7 +10,6 @@ import {
 } from '../../utils/helpers';
 import { useEffect } from 'react';
 import UpdateOrder from './UpdateOrder';
-//import UpdateOrder from "./UpdateOrder";
 
 function Order() {
   const order = useLoaderData();
